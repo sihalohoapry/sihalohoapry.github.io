@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.banner {
+  height: 100vh;
+  background-color: #47597e;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color: #dbe6fd;
+  padding: 100px 0;
+}
+.buttonGreting {
+  flex-basis: 50%;
+  font-size: 1.5em;
+  align-self: center;
+  margin-left: -100px;
+}
+.buttonImg {
+  flex-basis: 50%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Courier New", Courier, monospace;
+}
+
+header {
+  display: inline;
+}
+
+nav {
+  display: flex;
+  background-color: #293b5f;
+  padding: 20px 0;
+  justify-content: space-around;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  width: 40%;
+}
+
+nav ul li::after {
+  transition: all 1s;
+}
+
+nav .logo {
+  letter-spacing: 3px;
+  color: white;
+}
+
+nav a:hover {
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: #dbe6fd;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+.menu-toggle div {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #dbe6fd;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.menu-toggle div:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle div:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ div:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ div:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+.menu-toggle input:checked ~ div:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+.anim {
+  transition: all 2s;
+}
+
+.profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 50px;
+}
+
+.medsos ul {
+  display: flex;
+  list-style-type: none;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.medsos ul li {
+  margin-right: 10px;
+}
+
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: right;
+  margin-bottom: 100px;
+}
+
+.flex-container-row {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  flex-basis: 50%;
+  font-size: 1.5em;
+  text-align: left;
+  padding: 20px;
+}
+
+.flex-container-column-portfolio {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: right;
+  margin-bottom: 100px;
+}
+
+.portfolio_jpg {
+  width: 100%;
+}
+
+.listNav {
+  color: #47597e;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.double {
+  flex-basis: 50%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 #47597e;
+}
+
+.medsos ul li a img:hover {
+  width: 70px;
+  transition: 0.5s;
+}
+
+.card header h3 {
+  text-align: center;
+}
+footer {
+  background: #293b5f;
+  padding: 40px;
+  color: white;
+}
+
+@media screen and (max-width: 888px) {
+  .jumbotron {
+    flex-direction: column;
+    padding: 100px 0;
+  }
+  .buttonGreting {
+    margin-left: 0;
+    text-align: center;
+  }
+  .buttonImg img {
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 672px) {
+  .button {
+    padding: 5px;
+  }
+
+  .profile {
+    margin-top: 100px;
+  }
+  .buttonImg img {
+    width: 600px;
+  }
+
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 75%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #293b5f;
+    align-items: center;
+    z-index: -1px;
+    transform: translateX(100%);
+    transition: all 1s;
+  }
+
+  nav ul.slide {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .flex-container-column {
+    justify-content: center;
+  }
+
+  .flex-container-row {
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+  }
+  .profile {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .buttonImg img {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 442px) {
+  .buttonImg img {
+    width: 400px;
+  }
+}
