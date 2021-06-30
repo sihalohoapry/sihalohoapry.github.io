@@ -206,6 +206,24 @@ a {
 .card header h3 {
   text-align: center;
 }
+
+.wrapper {
+  border: 1px solid #ddd;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.wrapper::-webkit-scrollbar {
+  width: 0;
+}
+
+.skil_a {
+  color: #47597e;
+}
+.skil_a:hover {
+  font-weight: bold;
+}
+
 footer {
   background: #293b5f;
   padding: 40px;
