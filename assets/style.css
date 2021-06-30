@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .banner {
@@ -31,7 +32,9 @@ html {
 }
 
 body {
+  position: absolute;
   overflow-x: hidden;
+  width: 100%;
   font-family: "Courier New", Courier, monospace;
 }
 
