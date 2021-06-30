@@ -21,3 +21,9 @@ let word = "";
 
   setTimeout(ngetik, 200);
 })();
+const submitForm = document.getElementById("form");
+submitForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const btn = document.getElementsByClassName("btn-submit");
+  btn.innerText = "Mengirim...";
+});

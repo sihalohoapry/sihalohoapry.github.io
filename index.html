@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/LogoAProjectDev.png">
+    <link rel="icon" href="assets/logo_a_project_dev.png">
     <title>It's me</title>
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -16,9 +16,9 @@
           <h3>Sihaloho</h3>
         </div>
         <ul>
-          <li class="anim"><a href="#">Home</a></li>
           <li class="anim"><a href="#about">About</a></li>
           <li class="anim"><a href="#portfolio">Portfolio</a></li>
+          <li class="anim"><a href="#contact">Contact</a></li>
         </ul>
         <div class="menu-toggle">
           <input type="checkbox" />
@@ -236,22 +236,78 @@
             </div>
           </div>
         </div>
+
+        <div id="contact" class="container first">
+          <h2 class="listNav">Tinggalkan Pesan Disini</h2>
+          <form name="sihaloho-contact-form" class="form contianer-form" action="#" id="form">
+            <div class="form-group form-title">
+              <label for="nama">Nama</label>
+              <input type="text" id="nama" name="nama" required />
+            </div>
+            <div class="form-group form-title">
+              <label  for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group form-title">
+              <label for="pesan">Pesan</label>
+              <input type="text" id="pesan" name="pesan"  required />
+            </div>
+
+            <div class="form-group form-title"></div>
+            <input type="submit" value="Kirim pesan" name="Submit" class="btn-submit btn-send" />
+            
+            
+            <div class="form-group form-title"></div>
+            <input type="submit" value="Mengirim...." name="loading" class="btn-submit btn-loading btn-hidden" />
+
+          </form>
+        </div>
+
       </div>
     </main>
 
     <footer>
       <p >Powered by Me</p>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+    <script>
+    </script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
     <script>
       gsap.from('.buttonImg img',{duration:5,opacity:0})
     </script>
     <script src="assets/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true
+      });
+    </script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyb2fonaTMfw7gBpa02C_WqvQgaCZkno2ouZ-US0azEfbfzwcw4tzdFHpbuefYLDMBUFw/exec'
+      const form = document.forms['sihaloho-contact-form'];
+      const btnKirim = document.querySelector(".btn-send");
+      const btnloading= document.querySelector(".btn-loading");
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        btnKirim.setAttribute("hidden", visibility="hidden");
+        btnloading.classList.toggle("btn-show")
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            
+            btnKirim.removeAttribute("hidden");
+            btnloading.classList.remove("btn-show")
+            alert("Terimakasih telah mengirim pesan");
+            form.reset();
+          })
+          .catch(error => {
+            btnKirim.removeAttribute("hidden");
+            btnloading.classList.remove("btn-show")
+            alert("Error, mohon coba lagi.");
+          });
+      })
+    </script>
   </body>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true
-    });
-  </script>
+
 </html>

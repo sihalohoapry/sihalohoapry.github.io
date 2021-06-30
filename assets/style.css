@@ -209,6 +209,82 @@ footer {
   color: white;
 }
 
+.container {
+  border-radius: 8px;
+  margin: 0, 16px;
+  background: #f8f9fa;
+  padding: 16px;
+  flex-grow: 1;
+  height: max-content;
+}
+.form {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  height: 400px;
+  border-radius: 16px;
+}
+
+.container-form {
+  border-radius: 8px;
+  margin: 16px;
+  background: #f8f9fa;
+  padding: 16px;
+  height: fit-content;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+  font-size: 18;
+  font-weight: lighter;
+}
+.form-title {
+  margin: auto 0;
+}
+.btn-submit {
+  width: fit-content;
+  border: none;
+  border-radius: 16px;
+  padding: 12px 24px;
+  border: 2px solid #47597e;
+  color: black;
+  font-size: 24px;
+  margin-top: 20px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.btn-hidden {
+  visibility: hidden;
+}
+.btn-hidden2 {
+  visibility: hidden;
+}
+.btn-show {
+  visibility: visible;
+}
+
+.btn-submit:hover {
+  background: #293b5f;
+  color: white;
+}
+
+input[type="text"],
+input[type="email"] {
+  font-family: Raleway;
+  background: white;
+  border: 2px solid #47597e;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
 @media screen and (max-width: 888px) {
   .jumbotron {
     flex-direction: column;
